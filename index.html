@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>JEE Ascension — Adaptive Campaign</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <div class="eyebrow">JEE ASCENSION</div>
+    <h1>Adaptive Campaign</h1>
+  </div>
+  <button id="exportBtn" class="ghost">Export</button>
+</header>
+
+<main>
+<section class="hero card">
+  <div>
+    <div class="eyebrow">TODAY'S COMMAND</div>
+    <h2 id="campaignTitle">Start today’s campaign.</h2>
+    <p id="campaignSummary">The system will compare your available time with demonstrated capacity before assigning pressure.</p>
+  </div>
+  <button id="campaignBtn" class="primary">START TODAY'S CAMPAIGN</button>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <div class="section-head"><h3>Reality Check</h3><span id="realityBadge" class="badge">—</span></div>
+    <div id="realityText" class="bigtext">Enter your available study time to calibrate the day.</div>
+    <div class="stats">
+      <div><span>Available</span><b id="availableOut">—</b></div>
+      <div><span>Demonstrated</span><b id="capacityOut">—</b></div>
+      <div><span>Target</span><b id="targetOut">—</b></div>
+    </div>
+    <div class="row">
+      <input id="available" type="number" min="0" step=".5" placeholder="Hours available today">
+      <button id="calibrateBtn" class="secondary">Calibrate</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-head"><h3>Adaptive Capacity</h3></div>
+    <p>Capacity is learned from productive sessions you actually log. The campaign targets roughly 82% of demonstrated capacity, leaving room for difficult questions and variance.</p>
+    <div class="meter"><div id="capacityMeter"></div></div>
+    <div id="capacityNote" class="muted">Log productive time to teach the system your real capacity.</div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="section-head"><h3>Today's Quests</h3><button id="addQuestBtn" class="small">+ Add</button></div>
+  <div id="questList" class="list"></div>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <div class="section-head"><h3>Challenges</h3><button id="newChallengeBtn" class="small">New</button></div>
+    <div id="challengeBox"></div>
+  </div>
+  <div class="card">
+    <div class="section-head"><h3>Time Core</h3></div>
+    <div class="timer" id="timer">00:00:00</div>
+    <div class="row wrap">
+      <button class="mode" data-mode="productive">Productive</button>
+      <button class="mode" data-mode="break">Break</button>
+      <button class="mode" data-mode="lost">Lost Time</button>
+    </div>
+    <div class="row wrap">
+      <button id="startTimer" class="primary">Start</button>
+      <button id="stopTimer" class="secondary">Stop</button>
+    </div>
+    <div id="timeNote" class="muted">Productive minutes earn XP.</div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="section-head"><h3>Test Raid</h3></div>
+  <div class="grid four">
+    <input id="testName" placeholder="Test name">
+    <input id="score" type="number" min="0" placeholder="Score">
+    <input id="maxScore" type="number" min="1" placeholder="Max">
+    <input id="weakness" placeholder="Main weakness">
+  </div>
+  <button id="recordTest" class="primary">Record Test + Generate Weakness Quest</button>
+  <div id="testHistory" class="list compact"></div>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <div class="section-head"><h3>World Map</h3></div>
+    <div class="world"><div class="realm">MATHS<span>Patterns</span></div><div class="realm">PHYSICS<span>Laws</span></div><div class="realm">CHEMISTRY<span>Alchemy</span></div></div>
+    <div class="muted">Existing progress is represented as ability territories. Keep moving by demonstrated skill, not chapter-count farming.</div>
+  </div>
+  <div class="card">
+    <div class="section-head"><h3>Ascension Stats</h3></div>
+    <div id="statsBox"></div>
+  </div>
+</section>
+
+<section class="card danger-zone">
+  <div class="section-head"><h3>Data</h3></div>
+  <div class="row wrap">
+    <button id="resetBtn" class="danger">Reset Save</button>
+    <span class="muted">Everything is stored locally in this browser.</span>
+  </div>
+</section>
+</main>
+<nav class="bottom">
+  <a href="#campaign">Command</a><a href="#quests">Quests</a><a href="#challenge">Challenges</a><a href="#raid">Raid</a><a href="#stats">Stats</a>
+</nav>
+<script src="app.js"></script>
+</body>
+</html>
